@@ -1,9 +1,8 @@
 var CACHE = 'sitoc-wc-v1';
 var URLS = [
-  '.',
   'index.html',
   'styles.css',
-  'icon.svg',
+  'Logomini.png',
   'manifest.json'
 ];
 
