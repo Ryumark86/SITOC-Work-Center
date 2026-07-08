@@ -6,7 +6,11 @@
   <title>SITOC Work Center</title>
   <meta name="theme-color" content="#0d2b4e">
   <meta name="description" content="Portal unificado de aplicaciones SITOC para técnicos en campo">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -100,5 +104,22 @@
   <footer>
     <p>SITOC &mdash; Soluciones Integrales en Trabajo Organizado y Capacitaci&oacute;n</p>
   </footer>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js').then(function (reg) {
+        reg.addEventListener('updatefound', function () {
+          var installing = reg.installing;
+          if (installing) {
+            installing.addEventListener('statechange', function () {
+              if (installing.state === 'installed' && navigator.serviceWorker.controller) {
+                console.log('Nueva versi\u00f3n disponible');
+              }
+            });
+          }
+        });
+      }).catch(function (e) { console.error('SW registration error:', e); });
+    }
+  </script>
 </body>
 </html>

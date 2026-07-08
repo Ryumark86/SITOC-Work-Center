@@ -1,0 +1,17 @@
+{
+  "name": "SITOC Work Center",
+  "short_name": "Work Center",
+  "description": "Portal unificado de aplicaciones SITOC para técnicos en campo",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#0d2b4e",
+  "theme_color": "#0d2b4e",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
